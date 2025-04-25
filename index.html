@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <div class="controls">
+      <input type="text" id="taskInput" placeholder="Adicionar nova tarefa..." />
+      <select id="prioritySelect">
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+      <button onclick="addTask()">Adicionar</button>
+    </div>
+    <div class="filters">
+      <button onclick="filterTasks('all')">Todas</button>
+      <button onclick="filterTasks('pending')">Pendentes</button>
+      <button onclick="filterTasks('completed')">Concluídas</button>
+      <button onclick="toggleDarkMode()">🌙</button>
+      <select onchange="sortTasks(this.value)">
+        <option value="date">Ordenar por Data</option>
+        <option value="priority">Ordenar por Prioridade</option>
+      </select>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
